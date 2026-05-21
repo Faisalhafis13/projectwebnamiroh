@@ -1,0 +1,32 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+    container_name: jamaah_app
+
+    working_dir: /var/www
+
+    volumes:
+      - ./:/var/www
+
+    ports:
+      - "8000:8000"
+
+    command: php artisan serve --host=0.0.0.0 --port=8000
+
+    depends_on:
+      - mysql
+
+  mysql:
+    image: mysql:8.0
+
+    container_name: jamaah_mysql
+
+    environment:
+      MYSQL_DATABASE: jamaah_umroh
+      MYSQL_ROOT_PASSWORD: root
+
+    ports:
+      - "3307:3306"
