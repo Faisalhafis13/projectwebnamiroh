@@ -23,7 +23,7 @@ use App\Http\Controllers\LaporanAgenController;
 use App\Http\Controllers\Pengaturan\RoleMenuController;
 use App\Http\Controllers\Pengaturan\RoleUserController;
 use App\Http\Controllers\ActivityLogController;
-
+use App\Http\Controllers\PerlengkapanController;
 
 /*
 |--------------------------------------------------------------------------
@@ -134,5 +134,6 @@ Route::middleware(['web', 'auth'])->group(function () {
 
     Route::get('/activity-logs', [ActivityLogController::class, 'index']) ->name('activity-log.index');
 
-
+    Route::get('/perlengkapan', [PerlengkapanController::class, 'view'])
+        ->name('perlengkapan.index');
 });

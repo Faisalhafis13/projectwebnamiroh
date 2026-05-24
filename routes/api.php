@@ -24,6 +24,7 @@ use App\Http\Controllers\LaporanAgenController;
 use App\Http\Controllers\Pengaturan\RoleMenuController;
 use App\Http\Controllers\Pengaturan\RoleUserController;
 use App\Http\Controllers\ActivityLogController;
+use App\Http\Controllers\PerlengkapanController;
 
 
 Route::middleware(['web','auth'])->group(function () {
@@ -120,6 +121,17 @@ Route::middleware(['web','auth', 'role:hotel_tiket,admin'])->group(function () {
     Route::put('/maskapai/{id}', [MaskapaiController::class, 'update']);
 
     Route::delete('/maskapai/{id}', [MaskapaiController::class, 'destroy']);
+
+    Route::get('/perlengkapan', [PerlengkapanController::class, 'index'])
+    ->name('api.perlengkapan.index');
+
+    Route::post('/perlengkapan', [PerlengkapanController::class, 'store']);
+
+    Route::put('/perlengkapan/{id}', [PerlengkapanController::class, 'update']);
+
+    Route::delete('/perlengkapan/{id}', [PerlengkapanController::class, 'destroy']);
+
+    Route::get('/get-perlengkapan', [PerlengkapanController::class, 'getPerlengkapan']);
 });
 
 
