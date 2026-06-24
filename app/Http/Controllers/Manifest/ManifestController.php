@@ -12,19 +12,12 @@ use App\Models\JamaahAgen;
 
 class ManifestController extends Controller
 {
-    // =========================
-    // HALAMAN MANIFEST
-    // =========================
     public function index()
     {
         $pakets = PaketUmroh::orderBy('tanggal', 'desc')->get();
 
         return view('manifest.index', compact('pakets'));
     }
-
-    // =========================
-    // GET DATA MANIFEST
-    // =========================
     public function getData(Request $request)
     {
 $data = Manifest1::with([

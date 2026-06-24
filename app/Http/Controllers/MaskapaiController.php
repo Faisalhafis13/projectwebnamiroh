@@ -7,27 +7,16 @@ use App\Models\Maskapai;
 
 class MaskapaiController extends Controller
 {
-    // ======================
-    // VIEW
-    // ======================
     public function view()
     {
         return view('maskapai.index');
     }
-
-    // ======================
-    // API INDEX
-    // ======================
     public function index()
     {
         $maskapai = Maskapai::latest()->get();
 
         return response()->json($maskapai);
     }
-
-    // ======================
-    // STORE
-    // ======================
     public function store(Request $request)
     {
         try {

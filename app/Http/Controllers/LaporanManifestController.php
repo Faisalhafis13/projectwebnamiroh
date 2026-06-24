@@ -7,17 +7,10 @@ use Illuminate\Support\Facades\DB;
 
 class LaporanManifestController extends Controller
 {
-    // =========================
-    // VIEW
-    // =========================
     public function view()
     {
         return view('laporan.manifest');
     }
-
-    // =========================
-    // INDEX
-    // =========================
     public function index()
     {
         $summary = [

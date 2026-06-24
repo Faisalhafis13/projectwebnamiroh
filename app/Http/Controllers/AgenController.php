@@ -7,17 +7,11 @@ use App\Models\Agen;
 
 class AgenController extends Controller
 {
-    // ======================
-    // VIEW
-    // ======================
     public function view()
     {
         return view('agen.index');
     }
 
-    // ======================
-    // API INDEX (HANYA AKTIF)
-    // ======================
 public function index(Request $request)
 {
     $query = Agen::query();
@@ -30,9 +24,6 @@ public function index(Request $request)
         $query->latest()->get()
     );
 }
-    // ======================
-    // STORE
-    // ======================
 public function store(Request $request)
 {
     try {

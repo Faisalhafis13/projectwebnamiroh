@@ -7,41 +7,19 @@ use Illuminate\Support\Facades\DB;
 
 class LaporanJamaahController extends Controller
 {
-    // =========================
-    // VIEW
-    // =========================
     public function view()
     {
         return view('laporan.jamaah');
     }
-
-    // =========================
-    // API DATA
-    // =========================
     public function index()
     {
-        // =========================
-        // TOTAL JAMAAH
-        // =========================
         $totalJamaah = DB::table('manifest1s')->count();
-
-        // =========================
-        // TOTAL MANDIRI
-        // =========================
         $totalMandiri = DB::table('manifest1s')
             ->where('tipe', 'mandiri')
             ->count();
-
-        // =========================
-        // TOTAL AGEN
-        // =========================
         $totalAgen = DB::table('manifest1s')
             ->where('tipe', 'agen')
             ->count();
-
-        // =========================
-        // REKAP PER PAKET
-        // =========================
 $perPaket = DB::table('manifest1s')
 
     ->join(

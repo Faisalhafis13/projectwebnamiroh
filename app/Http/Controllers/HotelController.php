@@ -7,27 +7,16 @@ use App\Models\Hotel;
 
 class HotelController extends Controller
 {
-    // ======================
-    // VIEW
-    // ======================
     public function view()
     {
         return view('hotel.index');
     }
-
-    // ======================
-    // API INDEX
-    // ======================
     public function index()
     {
         $hotel = Hotel::latest()->get();
 
         return response()->json($hotel);
     }
-
-    // ======================
-    // STORE
-    // ======================
     public function store(Request $request)
     {
         try {

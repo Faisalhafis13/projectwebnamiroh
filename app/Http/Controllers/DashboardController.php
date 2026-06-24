@@ -10,25 +10,6 @@ use App\Models\Manifest;
 
 class DashboardController extends Controller
 {
-    /**
-     * Summary Dashboard (API)
-     */
-    // public function index()
-    // {
-    //     $jamaahMandiri = JamaahMandiri::where('tipe', 'mandiri')->count();
-    //     $jamaahAgen    = JamaahAgen::where('tipe', 'agen')->count();
-    //     $manifest      = Manifest::count();
-
-    //     return response()->json([
-    //         'jamaah_mandiri' => $jamaahMandiri,
-    //         'jamaah_agen'    => $jamaahAgen,
-    //         'manifest'       => $manifest,
-    //     ]);
-    // }
-
-    /**
-     * View Dashboard (WEB)
-     */
     public function view()
     {
         return view('dashboard.index');

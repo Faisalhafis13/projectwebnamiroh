@@ -11,17 +11,10 @@ use App\Models\JamaahAgen;
 
 class PaketUmrohController extends Controller
 {
-    // ======================
-    // VIEW
-    // ======================
     public function view()
     {
         return view('paket-umroh.index');
     }
-
-    // ======================
-    // API INDEX (SUDAH TAMBAH TERISI + SISA)
-    // ======================
 public function index()
 {
     $paket = PaketUmroh::with(['hotel', 'maskapai'])
